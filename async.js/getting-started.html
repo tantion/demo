@@ -4,17 +4,21 @@
 <meta charset="UTF-8">
 <title>async.js</title>
 <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
-<link rel="stylesheet" href="../bower_components/highlightjs/styles/solarized_dark.css">
+<link rel="stylesheet" href="../bower_components/highlightjs/styles/default.css">
 </head>
 <body>
 <div class="container">
     <h1>async.js getting started</h1>
     <section>
         <h2>async.each</h2>
-        <p>Example:</p>
-        <pre><code class="async-each"></code></pre>
+        <p>Example: success</p>
+        <pre><code class="async-each javascript"></code></pre>
         <p>Result:</p>
         <pre><code class="async-each-output"></code></pre>
+        <p>Example: error</p>
+        <pre><code class="async-each-error javascript"></code></pre>
+        <p>Result:</p>
+        <pre><code class="async-each-error-output"></code></pre>
     </section>
 </div>
 <script src="../bower_components/async/lib/async.js"></script>
@@ -22,22 +26,41 @@
 <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="../js/jquery.log.js"></script>
 <script src="../bower_components/highlightjs/highlight.pack.js"></script>
+
 <script class="script-code" data-render=".async-each">
-    var items = [{
-        'key1': 'value'
-    }, {
-        'key2': 'value'
-    }];
-    var startTime = new Date().getTime();
-    async.each(items, function (item, fun) {
+(function () {
+    var startTime = new Date().getTime(),
+        $output = $('.async-each-output');
+    async.each([1, 2], function (item, fun) {
         setTimeout(function () {
+            $output.logln('done', item);
             fun(); // completed
         }, 500);
     }, function (err) {
-        // completed all
-        $('.async-each-output').log('time:' + (new Date().getTime() - startTime));
+        $output
+        .logln('all done')
+        .logln('time:' + (new Date().getTime() - startTime));
     });
+})();
 </script>
+
+<script class="script-code" data-render=".async-each-error">
+(function () {
+    var startTime = new Date().getTime(),
+        $output = $('.async-each-error-output');
+    async.each([1, 2], function (item, fun) {
+        setTimeout(function () {
+            $output.logln('done', item);
+            fun('error block.'); // error
+        }, 500);
+    }, function (err) {
+        $output
+        .logln('cause error', err)
+        .logln('time:' + (new Date().getTime() - startTime));
+    });
+})();
+</script>
+
 <script src="../js/code-hightlight.js"></script>
 </body>
 </html>

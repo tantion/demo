@@ -11,7 +11,7 @@
             var $code = $(script),
                 $target = $($code.data('render'));
 
-            $target.html($code.html());
+            $target.html($.trim($code.html()));
 
             callback();
         }, function () {
@@ -24,7 +24,7 @@
             var $code = $(script),
                 $target = $($code.data('render'));
 
-            $target.html($code.html());
+            $target.html($.trim($code.html()));
         });
         hljs.initHighlightingOnLoad();
     }
