@@ -21,6 +21,17 @@
         <pre><code class="async-each-error-output"></code></pre>
     </section>
     <section>
+        <h2>async.eachLimit</h2>
+        <p>Example: success</p>
+        <pre><code class="async-eachLimit javascript"></code></pre>
+        <p>Result:</p>
+        <pre><code class="async-eachLimit-output"></code></pre>
+        <p>Example: error</p>
+        <pre><code class="async-eachLimit-error javascript"></code></pre>
+        <p>Result:</p>
+        <pre><code class="async-eachLimit-error-output"></code></pre>
+    </section>
+    <section>
         <h2>async.eachSeries</h2>
         <p>Example: in order</p>
         <pre><code class="async-eachSeries javascript"></code></pre>
@@ -60,6 +71,40 @@
     var startTime = new Date().getTime(),
         $output = $('.async-each-error-output');
     async.each([1, 2], function (item, fun) {
+        setTimeout(function () {
+            $output.logln('done', item);
+            fun('error block.'); // error
+        }, 500);
+    }, function (err) {
+        $output
+        .logln('cause error', err)
+        .logln('time:' + (new Date().getTime() - startTime));
+    });
+})();
+</script>
+
+<script class="script-code" data-render=".async-eachLimit">
+(function () {
+    var startTime = new Date().getTime(),
+        $output = $('.async-eachLimit-output');
+    async.eachLimit([1, 2, 3, 4], 2, function (item, fun) {
+        setTimeout(function () {
+            $output.logln('done', item);
+            fun(); // completed
+        }, 500);
+    }, function (err) {
+        $output
+        .logln('all done')
+        .logln('time:' + (new Date().getTime() - startTime));
+    });
+})();
+</script>
+
+<script class="script-code" data-render=".async-eachLimit-error">
+(function () {
+    var startTime = new Date().getTime(),
+        $output = $('.async-eachLimit-error-output');
+    async.eachLimit([1, 2, 3, 4], 2, function (item, fun) {
         setTimeout(function () {
             $output.logln('done', item);
             fun('error block.'); // error
