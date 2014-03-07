@@ -20,6 +20,17 @@
         <p>Result:</p>
         <pre><code class="async-each-error-output"></code></pre>
     </section>
+    <section>
+        <h2>async.eachSeries</h2>
+        <p>Example: in order</p>
+        <pre><code class="async-eachSeries javascript"></code></pre>
+        <p>Result:</p>
+        <pre><code class="async-eachSeries-output"></code></pre>
+        <p>Example: in order break</p>
+        <pre><code class="async-eachSeries-break javascript"></code></pre>
+        <p>Result:</p>
+        <pre><code class="async-eachSeries-break-output"></code></pre>
+    </section>
 </div>
 <script src="../bower_components/async/lib/async.js"></script>
 <script src="../bower_components/jquery/dist/jquery.js"></script>
@@ -56,6 +67,40 @@
     }, function (err) {
         $output
         .logln('cause error', err)
+        .logln('time:' + (new Date().getTime() - startTime));
+    });
+})();
+</script>
+
+<script class="script-code" data-render=".async-eachSeries">
+(function () {
+    var startTime = new Date().getTime(),
+        $output = $('.async-eachSeries-output');
+    async.eachSeries([1, 2], function (item, fun) {
+        setTimeout(function () {
+            $output.logln('done', item);
+            fun(); // completed
+        }, 500);
+    }, function (err) {
+        $output
+        .logln('all done')
+        .logln('time:' + (new Date().getTime() - startTime));
+    });
+})();
+</script>
+
+<script class="script-code" data-render=".async-eachSeries-break">
+(function () {
+    var startTime = new Date().getTime(),
+        $output = $('.async-eachSeries-break-output');
+    async.eachSeries([1, 2], function (item, fun) {
+        setTimeout(function () {
+            $output.logln('done', item);
+            fun('break'); // break
+        }, 500);
+    }, function (err) {
+        $output
+        .logln('queue', err)
         .logln('time:' + (new Date().getTime() - startTime));
     });
 })();
