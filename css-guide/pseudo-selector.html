@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>pseudo selector</title>
+<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+<link rel="stylesheet" href="../bower_components/highlightjs/styles/default.css">
+</head>
+<body>
+<div class="container">
+    <h1>pseudo selector</h1>
+    <section>
+        <h2>:first-child</h2>
+        <p>Example: </p>
+        <style class="script-code" data-render=".section1-code">
+            li:first-child {
+                color: red;
+            }
+        </style>
+        <pre><code class="css section1-code"></code></pre>
+        <p>Result:</p>
+        <ol>
+            <li><span>test-span1</span> <span>test-span2</span></li>
+            <li><span>test-span1</span> <span>test-span2</span></li>
+            <li><span>test-span1</span> <span>test-span2</span></li>
+            <li><span>test-span1</span> <span>test-span2</span></li>
+        </ol>
+    </section>
+    <section>
+        <h2>:first-letter</h2>
+        <p>Example: </p>
+        <style class="script-code" data-render=".section1-code">
+            .first-letter li:first-letter {
+                font-size: 200%;
+            }
+        </style>
+        <pre><code class="css section1-code"></code></pre>
+        <p>Result:</p>
+        <ol class="first-letter">
+            <li><span>test-span1</span> <span>test-span2</span></li>
+            <li><span>test-span1</span> <span>test-span2</span></li>
+            <li><span>test-span1</span> <span>test-span2</span></li>
+            <li><span>test-span1</span> <span>test-span2</span></li>
+        </ol>
+    </section>
+</div>
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../bower_components/highlightjs/highlight.pack.js"></script>
+<script src="../js/code-hightlight.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <style>
+        span[class*="font"] { color: green; }
+        span[class="font12"] { font-size: 12px;}
+        span[class="weight12"] { font-weight: 12px; }
+        span[class~="font12"] { font-size: 12px; color: red; }
+        span[class!="font12"] { font-size: 16px; color: yellow; }
+        span[class^="font"] { color: gray; }
+        span[class$="16"] { color: blue; }
+    </style>
+    <p>
+        <span class="font12 weight12">font12</span>
+    </p>
+    <p>
+        <span class="font14">font14</span>
+    </p>
+    <p>
+        <span class="font16">font14</span>
+    </p>
+    <p>
+        <span class="font18">font14</span>
+    </p>
+</body>
+</html>
