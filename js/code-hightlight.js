@@ -20,11 +20,11 @@
     }
     // 同步执行
     else {
-        $scripts.each(function (script) {
+        $scripts.each(function (key, script) {
             var $code = $(script),
                 $target = $($code.data('render'));
 
-            $target.html($.trim($code.html()));
+            $target.html($code.html());
         });
         hljs.initHighlightingOnLoad();
     }
