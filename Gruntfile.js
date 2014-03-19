@@ -15,11 +15,24 @@ module.exports = function(grunt) {
           base: '.'
         }
       }
+    },
+    watch: {
+      livereload: {
+        options: {
+          livereload: '<%= connect.debug.options.livereload %>'
+        },
+        files: [
+          '**/*.html',
+          '**/*.js',
+          '**/*.css'
+        ]
+      }
     }
   });
 
   // Load the plugin that provides the "connect" task.
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task(s).
   grunt.registerTask('default', ['connect:debug']);

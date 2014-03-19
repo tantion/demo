@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="cssApp">
+<head>
+<meta charset="UTF-8">
+<title>font css</title>
+<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+<link rel="stylesheet" href="../bower_components/highlightjs/styles/default.css">
+</head>
+<body>
+<div class="container">
+    <h1>font</h1>
+    <section ng-controller="FontController">
+        <h2>section</h2>
+        <p>Example: </p>
+        <pre>font: {{font.style}} {{font.weight}} {{font.variant}} {{font.size}}/{{font.lineHeight}} {{font.family}};</pre>
+        <p>Result:</p>
+        <ul>
+            <li>
+                <span>font-family:</span>
+                <select ng-model="font.family" ng-options="f for f in font.familys"></select>
+            </li>
+            <li>
+                <span>font-weight:</span>
+                <select ng-model="font.weight" ng-options="w for w in font.weights"></select>
+            </li>
+            <li>
+                <span>font-size:</span>
+                <select ng-model="font.size" ng-options="s for s in font.sizes"></select>
+            </li>
+            <li>
+                <span>line-height:</span>
+                <select ng-model="font.lineHeight" ng-options="l for l in font['line-heights']"></select>
+            </li>
+            <li>
+                <span>font-style:</span>
+                <select ng-model="font.style" ng-options="s for s in font.styles"></select>
+            </li>
+            <li>
+                <span>font-variant:</span>
+                <select ng-model="font.variant" ng-options="s for s in font.variants"></select>
+            </li>
+        </ul>
+        <p style="border: 1px solid gray;">I'm English. 我是中文。-- origin</p>
+        <p style="border: 1px solid gray;" ng-style="{
+            'font-family': font.family,
+            'font-weight': font.weight,
+            'font-style': font.style,
+            'font-variant': font.variant,
+            'line-height': font.lineHeight,
+            'font-size': font.size
+            }">I'm English. 我是中文。-- font</p>
+    </section>
+</div>
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../bower_components/highlightjs/highlight.pack.js"></script>
+<script src="../bower_components/angular/angular.js"></script>
+<script src="js/app.js"></script>
+<script src="js/font-controller.js"></script>
+<script src="../js/code-hightlight.js"></script>
+</body>
+</html>
