@@ -16,12 +16,16 @@
         <p>Result:</p>
         <ul>
             <li>
-                <span>font-family:</span>
-                <select ng-model="font.family" ng-options="f for f in font.familys"></select>
+                <span>font-style:</span>
+                <select ng-model="font.style" ng-options="s for s in font.styles"></select>
             </li>
             <li>
                 <span>font-weight:</span>
                 <select ng-model="font.weight" ng-options="w for w in font.weights"></select>
+            </li>
+            <li>
+                <span>font-variant:</span>
+                <select ng-model="font.variant" ng-options="s for s in font.variants"></select>
             </li>
             <li>
                 <span>font-size:</span>
@@ -32,12 +36,8 @@
                 <select ng-model="font.lineHeight" ng-options="l for l in font['line-heights']"></select>
             </li>
             <li>
-                <span>font-style:</span>
-                <select ng-model="font.style" ng-options="s for s in font.styles"></select>
-            </li>
-            <li>
-                <span>font-variant:</span>
-                <select ng-model="font.variant" ng-options="s for s in font.variants"></select>
+                <span>font-family:</span>
+                <select ng-model="font.family" ng-options="f for f in font.familys"></select>
             </li>
         </ul>
         <p style="border: 1px solid gray;">I'm English. 我是中文。-- origin</p>
