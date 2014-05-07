@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>work</title>
+</head>
+<body>
+<script>
+    var worker = new Worker('worker.js');
+    worker.addEventListener('message', function (evt) {
+        console.log(evt.data)
+    })
+</script>
+</body>
+</html>
