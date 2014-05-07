@@ -7,7 +7,7 @@ module.exports = function(grunt) {
     connect: {
       debug: {
         options: {
-          port: 9000,
+          port: 9090,
           hostname: 'localhost',
           keepalive: true,
           livereload: true,
