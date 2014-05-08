@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>canvas.translate</title>
+</head>
+<body>
+<h3>translate 平移</h3>
+<canvas id="canvas" width="400" height="400" style="border: 1px solid silver;"></canvas>
+<script>
+    var canvas = document.getElementById('canvas')
+    var ctx = canvas.getContext('2d')
+    ctx.beginPath();
+    ctx.moveTo(70, 140)
+    ctx.lineTo(140, 70)
+    ctx.stroke()
+
+    ctx.save();
+    ctx.translate(70, 140);
+    ctx.beginPath()
+    ctx.moveTo(70, 140)
+    ctx.lineTo(140, 70)
+    ctx.stroke()
+    ctx.restore()
+
+</script>
+</body>
+</html>
