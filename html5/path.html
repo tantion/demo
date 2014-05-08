@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>canvas beginPath and closePath</title>
+</head>
+<body>
+<h3>beginPath closePath 路径</h3>
+<canvas id="canvas" width="400" height="400" style="border: 1px solid silver;"></canvas>
+<script>
+    var canvas = document.getElementById('canvas')
+    var ctx = canvas.getContext('2d')
+
+    ctx.beginPath()
+
+    ctx.moveTo(10, 50)
+    ctx.lineTo(40, 80)
+    ctx.lineTo(60, 100)
+    ctx.lineTo(50, 140)
+
+    ctx.closePath()
+    ctx.stroke()
+</script>
+</body>
+</html>
