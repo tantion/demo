@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>dispatchEvent</title>
+</head>
+<body>
+<button id="dispatch">click</button>
+<section>
+    <ul>
+        <li>Event MouseEvent KeyboardEvent CustomEvent 不同的是初始化的 property 不同</li>
+    </ul>
+</section>
+<script>
+    var btn = document.querySelector('#dispatch');
+    btn.addEventListener('click', function (e) {
+        console.log(e);
+    }, false);
+    var e = new MouseEvent('click')
+    btn.dispatchEvent(e)
+    var e2 = new Event('click')
+    btn.dispatchEvent(e2)
+</script>
+</body>
+</html>
