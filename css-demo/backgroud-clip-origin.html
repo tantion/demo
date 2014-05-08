@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>background-clip vs background-origin</title>
+</head>
+<body>
+    <style>
+        .item {
+            height: 200px;
+            width: 400px;
+            border: 15px dashed silver;
+            padding: 15px;
+            margin: 15px;
+            background-color: red;
+
+        }
+        #clip {
+            background-clip: content-box;
+            background-image: url('../images/f.jpeg');
+        }
+        #origin {
+            background-origin: content-box;
+            background-image: url('../images/f.jpeg');
+        }
+        #clip-origin {
+            background-clip: content-box;
+            background-origin: content-box;
+            background-image: url('../images/f.jpeg');
+        }
+    </style>
+    <div class="item" id="clip">
+
+    </div>
+    <div class="item" id="origin">
+
+    </div>
+    <div class="item" id="clip-origin">
+
+    </div>
+    <section>
+        <ul>
+            <li>clip 指的是背景可用的范围，包不包括border或者padding等</li>
+            <li>origin 指的是从哪里开始绘制，包不包括 border或者padding等，不受 clip 的影响</li>
+        </ul>
+    </section>
+</body>
+</html>
