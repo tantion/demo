@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>es6 generator function</title>
+</head>
+<body>
+chrome 需要在 about:flags 中「启用实验性JavaScript（Enable Experimental JavaScript ）」
+<script type="application/javascript">
+    function *range (max, step) {
+        step = step || 1;
+        for (var i = 0; i < max; i += step) {
+            yield i;
+        }
+    }
+    console.log(range);
+    var gen = range(30, 4)
+    console.log(gen)
+    var n = gen.next();
+    console.log(n, n.done);
+</script>
+</body>
+</html>
