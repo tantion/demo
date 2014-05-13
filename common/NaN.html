@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NaN test</title>
+</head>
+<body>
+
+<script>
+    var a = NaN;
+    var b = parseInt('string', 10);
+    var c = parseInt(undefined, 10);
+    console.log(a, b, c);
+    console.log('NaN != NaN', a != b, NaN != NaN);
+    console.log('NaN + string', a + 'string');
+    console.log('NaN + 10', a + 10);
+    if (a) {
+        console.log('if (NaN) true');
+    } else {
+        console.log('if (NaN) false');
+    }
+    console.log('isNaN(NaN)', isNaN(a));
+    console.log('isNaN("string")', isNaN('string'));
+    console.log('isNaN(10)', isNaN(10));
+    console.log('Number.isNaN(NaN)', Number.isNaN(a));
+    console.log('Number.isNaN("string")', Number.isNaN('string'));
+    console.log('Number.isNaN(10)', Number.isNaN(10));
+
+    function isRealNaN (x) {
+        return x !== x;
+    }
+    console.log('isRealNaN(NaN)', isRealNaN(a));
+    console.log('isRealNaN("string")', isRealNaN('string'));
+    console.log('isRealNaN(10)', isRealNaN(10));
+</script>
+</body>
+</html>
