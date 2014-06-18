@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ECMAScript 6 Promise</title>
+</head>
+<body>
+    <h3>ECMAScript 6 Promise</h3>
+    <script>
+        var p = new Promise(function (resolve, reject) {
+            // do some thing
+            setTimeout(function () {
+                resolve(1000);
+            }, 1000);
+        });
+
+        p.then(function () {
+            console.log('done');
+        }, function () {
+            console.log('fail');
+        });
+    </script>
+</body>
+</html>
