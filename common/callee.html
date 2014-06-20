@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>arguments.callee</title>
+</head>
+<body>
+    <script>
+        var f = function (a) {
+            console.log(a);
+            if (a > 0) {
+                a -= 1;
+                return arguments.callee(a);
+            }
+            console.log('done');
+        };
+
+        var f2 = f;
+
+        f2(2);
+    </script>
+</body>
+</html>
