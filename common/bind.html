@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>bind</title>
+</head>
+<body>
+    <script>
+        var o = {
+            a: 'property',
+            f: function () {
+                console.log(this.a);
+            }
+        };
+        window.addEventListener('click', o.f.bind(o), false);
+    </script>
+</body>
+</html>
