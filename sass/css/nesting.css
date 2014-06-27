@@ -1,0 +1,8 @@
+ul li {
+  border: 1px solid silver; }
+ul a {
+  box-shadow: 1px 1px 1px silver; }
+ul span {
+  transition: all ease 1s; }
+ul code {
+  padding: 1px; }

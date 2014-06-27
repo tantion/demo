@@ -1,0 +1,6 @@
+.parent, .child {
+  color: white;
+  border: 1px; }
+
+.child {
+  border-width: 10px; }

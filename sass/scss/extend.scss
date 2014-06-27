@@ -1,0 +1,10 @@
+
+.parent {
+    color: white;
+    border: 1px;
+}
+
+.child {
+    @extend .parent;
+    border-width: 10px;
+}
