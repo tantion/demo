@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>function definition</title>
+</head>
+<body>
+    <script>
+        function log (msg) {
+            console.log(msg);
+        }
+
+        log(typeof foo); // => function
+        log(typeof bar); // => undefined
+
+        function foo () {
+            log('global foo function');
+        }
+
+        var bar = function () {
+            log('global bar function');
+        }; // NOTE: 如果没有分号这里将会提示莫名其妙的错误
+
+        (function () {
+            log(typeof foo); // => function
+            log(typeof bar); // => undefined
+
+            foo(); // => local function
+
+            function foo () {
+                log('local foo function');
+            }
+
+            var bar = function () {
+                log('local bar function');
+            }
+        })();
+    </script>
+</body>
+</html>
