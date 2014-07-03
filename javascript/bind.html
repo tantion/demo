@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>function bind</title>
+</head>
+<body>
+    <h2>curry</h2>
+    <script>
+        function is (name, o) {
+            return Object.prototype.toString.call(o) === '[object ' + name + ']';
+        }
+        var isFunction = is.bind(undefined, 'Function');
+        var isObject = is.bind(undefined, 'Object');
+
+        // 更直观的函数名 partial
+        // f(x, y) => fx(y) => fxy()
+        function curry (fn) {
+            return Function.bind.apply(fn, arguments);
+        }
+
+        var isRegExp = curry(is, 'RegExp'); // 缓存了变量 name 到闭包中
+        // 实际上比直接调用效率更低一点 is('RegExp', 1);
+
+        console.log(isRegExp(/1/));
+        console.log(isRegExp(1));
+        console.log(isFunction(is));
+        console.log(isFunction({}));
+        console.log(isObject(is));
+        console.log(isObject({}));
+
+    </script>
+</body>
+</html>

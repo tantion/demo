@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>regexp demo</title>
+</head>
+<body>
+    <script>
+        var str = '"JavaScript: \'\' The \'Definitive\' Guide; Java: java, javascript:"';
+
+        // \b \B 的使用
+        console.log(str.match(/\b[Jj]ava\b/)); // 不要空格的匹配
+        console.log(str.match(/[Jj]ava\B/)); // 不要空格的匹配
+
+        // \1 $1 的使用
+        console.log(str.match(/(['"])[^\1]*\1/)); // 匹配到了双引号和单引号
+        console.log(str.replace(/'([^']*)'/g, '"$1"')); // 把单引号变为双引号
+
+        // (?:) 不记入编号的分组
+        console.log(str.replace(/(?:')([^']*)'/g, '"$1"')); // 把单引号变为双引号
+        // (?=) 匹配紧跟位置，但是不记入匹配结果
+        console.log(str.match(/[jJ]ava(?:[sS]cript)?(?=:)/g));
+        // (?!) 匹配后面不能出现
+        console.log(str.match(/[jJ]ava([sS]cript)?(?!:)/:);
+
+        // *? +? ?? {1,}? 尽可能少的匹配
+        console.log(str.match(/\w+?/));
+    </script>
+</body>
+</html>
