@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>call aplly demo</title>
+</head>
+<body>
+    <script>
+        (function () {
+            function f () {
+                console.log(this);
+            }
+
+            function F () {
+                f.call(this);
+                f.call(undefined);  // this -> Window
+            }
+
+            new F();
+        })();
+
+        (function () {
+            "use strict";
+
+            function f () {
+                console.log(this);
+            }
+
+            function F () {
+                f.call(this);
+                f.call(undefined);  // this -> undefined
+            }
+
+            new F();
+        })();
+    </script>
+</body>
+</html>
