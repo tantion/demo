@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>cross site script</title>
+</head>
+<body>
+    <iframe id="xss-iframe" src="http://localhost:9090/javascript/xss-iframe.html" frameborder="0"></iframe>
+    <script src="http://localhost:9090/javascript/xss.js"></script>
+    <script>
+        (function () {
+            var iframe = document.querySelector('#xss-iframe');
+            var idoc = iframe.contentDocument;
+            // fail 同源策略
+            console.log(idoc.createTextNote);
+        })();
+    </script>
+</body>
+</html>
