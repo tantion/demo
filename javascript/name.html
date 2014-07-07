@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>name attribute</title>
+</head>
+<body>
+    <h3>form, iframe, img, object, embed, applet 元素的 name 属性会在 document[name], document.forms[name] 中有引用</h3>
+    <form name="form_name"></form>
+    <iframe src="about:blank" name="iframe_name" frameborder="0"></iframe>
+    <img name="img_name" alt="">
+    <script>
+        console.log(document);
+        console.log(document.form_name);
+        console.log(document.iframe_name);
+        console.log(document.img_name, document.images.length);
+        document.write('<img name="hehe" />');
+        console.log(document.images.hehe, document.images.length);
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>flex box demo</title>
+    <style>
+        .flex-container {
+            display: flex;
+            height: 500px;
+            background: silver;
+            flex-direction: row; /* 列 */
+            flex-wrap: nowrap; /* 不换行 */
+            flex-flow: row wrap; /* => up 2 */
+            justify-content: space-around;
+            align-items: flex-end;
+            align-content: flex-end; /* main */
+        }
+        .flex-item {
+            width: 300px;
+            height: 100px;
+            margin: auto;
+            background-color: orange;
+        }
+        .flex-item:nth-child(2) {
+            background-color: red;
+            height: 150px;
+        }
+        .flex-item:nth-child(3) {
+            background-color: green;
+            height:200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <section class="flex-item">some</section>
+        <section class="flex-item">some</section>
+        <section class="flex-item">hehe</section>
+        <section class="flex-item">111</section>
+    </div>
+</body>
+</html>
