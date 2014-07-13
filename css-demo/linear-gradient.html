@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>linear-gradient</title>
+</head>
+<body>
+    <style>
+        h3 {
+            border: 1px solid silver;
+            color: white;
+            padding: 10px;
+        }
+        .linear-gradient1 {
+            background-image: linear-gradient(90deg, black, white);
+            background-image: -webkit-linear-gradient(left, black, white);
+        }
+        .linear-gradient2 {
+            background-image: linear-gradient(90deg, black 10%, white 80%, black); /* start pos, end pos */
+        }
+        .linear-gradient3 {
+            background-image: repeating-linear-gradient(45deg, black 0px, black 10px, white 10px, white 20px)
+        }
+    </style>
+    <h3 class="linear-gradient1">
+        background-image: linear-gradient(90deg, black, white); /* left no effect */<br/>
+        background-image: -webkit-linear-gradient(left, black, white);
+    </h3>
+    <h3 class="linear-gradient2">
+        background-image: linear-gradient(90deg, black 10%, white 80%, black); /* start pos, end pos */
+    </h3>
+    <h3 class="linear-gradient3">
+        background-image: repeating-linear-gradient(45deg, black 0px, black 10px, white 10px, white 20px)
+    </h3>
+</body>
+</html>
