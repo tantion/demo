@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>box-shadow</title>
+</head>
+<body>
+    <style>
+        h3 {
+            padding: 10px;
+        }
+        .box-shadow1 {
+            box-shadow: 1px 1px 2px black;
+        }
+        .box-shadow2 {
+            box-shadow: 0 0 5px 1px black;
+        }
+        .box-shadow3 {
+            box-shadow: 0 0 5px 1px black inset;
+        }
+        .box-shadow4 {
+            box-shadow: 0 0 5px 1px black, 0 0 5px 1px black inset;
+        }
+    </style>
+    <h3 class="box-shadow1">box-shadow: 1px 1px 2px black;</h3>
+    <h3 class="box-shadow2">box-shadow: 0 0 5px 1px black;</h3>
+    <h3 class="box-shadow3">box-shadow: 0 0 5px 1px black inset;</h3>
+    <h3 class="box-shadow4">box-shadow: 0 0 5px 1px black, 0 0 5px 1px black inset;</h3>
+</body>
+</html>
