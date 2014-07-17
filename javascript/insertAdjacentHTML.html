@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>insertAdjacentHTML demo</title>
+    <style>
+        #adjacent { 
+            position: relative;
+            border: 1px solid silver; 
+            padding: 10px;
+        }
+        #adjacent:after {
+            content: 'div';
+            display: block;
+            position: absolute;
+            background-color: silver;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="adjacent" style="">
+        <p>param</p>
+    </div>
+    <script>
+        var div = document.getElementById('adjacent');
+        div.insertAdjacentHTML('beforebegin', '<p>beforebegin</p>');
+        div.insertAdjacentHTML('beforeend', '<p>beforeend</p>');
+        div.insertAdjacentHTML('afterbegin', '<p>afterbegin</p>');
+        div.insertAdjacentHTML('afterend', '<p>afterend</p>');
+    </script>
+</body>
+</html>
